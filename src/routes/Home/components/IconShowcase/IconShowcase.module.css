@@ -1,0 +1,30 @@
+.showcaseWrapper{
+    width: 90%;
+    margin: 1rem auto;
+}
+
+.row{
+    height: 10rem;
+    width: 100%;
+    margin: 5rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.row:last-of-type{
+    justify-content: flex-end;
+}
+
+.iconContainer{
+    width: 15%;
+    height: 100%;
+}
+
+.iconContainer img{
+    width: 75%;
+    margin: 0 auto;
+    vertical-align: middle;
+    height: 75%;
+    object-fit: contain;
+}

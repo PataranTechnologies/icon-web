@@ -1,0 +1,8 @@
+.iconPacks{
+    width: 100%;
+    height: 50rem;
+    display: grid;
+    place-items: center;
+    font-size: 4rem;
+}
+

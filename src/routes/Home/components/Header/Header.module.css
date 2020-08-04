@@ -1,0 +1,78 @@
+.headerWrapper{
+    width: 100%;
+    height: 35rem;
+    background: linear-gradient(to top, #fcfbfb 0%, transparent 100%), url("../../../../assets/background1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header{
+    width: 90%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.heroTextContainer, .heroImageContainer{
+    width: 50%;
+}
+
+.heroText{
+    font-size: 3rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.terminationBar{
+    height: .75rem;
+    width: 30%;
+    margin-top: 1rem;
+    background-color: #E1B313;
+}
+
+.heroImage{
+    width: 100%;
+    vertical-align: middle;
+}
+
+.searchBoxContainer{
+    position: absolute;
+    left: 1%;
+    bottom: 5%;
+    width: 50%;
+    height: 4rem;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: 0 5px 5px 3px #cccccc;
+}
+
+.searchBoxInput{
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+.searchBoxInput::placeholder{
+    font-size: 1.025rem;
+    padding: 0 1rem;
+    font-family: inherit;
+    letter-spacing: .75px;
+    color: #acacac;
+}
+
+.searchIcon{
+    height: 45%;
+    padding-left: 1.1rem;
+    vertical-align: middle;
+}
