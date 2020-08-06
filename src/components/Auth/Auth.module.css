@@ -4,13 +4,58 @@
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.75);
     border-radius: 15px;
     position: relative;
+    text-align: center;
+}
+
+.informationHeading{
+    text-align: center;
+    font-size: 1.5rem;
 }
 
 .authContainer h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     color: #302f2f;
-    padding: 1rem 0 1.5rem 0;
+    padding-top: 1rem;
+}
+
+.socialNetwork{
+    color: #a1a1a1;
+}
+
+.googleLinkContainer{
+    display: inline-flex;
+    padding: .25rem .75rem;
+    border: 1px solid #302f2f;
+    margin: 1rem auto .25rem auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.googleLinkContainer svg{
+    vertical-align: middle;
+    margin-right: .5rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+.googleLinkContainer span{
+    color: #302f2f;
+    font-size: 1.25rem;
+}
+
+.separator{
+    margin: 1rem 0;
+}
+
+.separator::after, .separator::before{
+    content: '';
+    display: inline-block;
+    background-color: #adadad;
+    width: 10rem;
+    height: 1px;
+    vertical-align: middle;
+    margin: 0 1rem;
 }
 
 .formGroup {
@@ -24,72 +69,87 @@
 .passInput,
 .nameInput {
     width: 70%;
-    padding: .7rem;
-    border: 1px solid #dadada;
-    margin: .5rem auto;
+    border: 1px solid #666666;
+    margin: .75rem auto;
     border-radius: 5px;
-    font-size: 1rem;
-    outline: none;
     transition: border .3s ease;
+    position: relative;
 }
 
 .emailInput:hover,
 .passInput:hover,
 .nameInput:hover {
-    border: 1px solid #bfbfbf;
+    border: 1px solid #3a3a3a;
 }
 
-.emailInput:focus,
-.passInput:focus,
-.nameInput:focus {
-    border: 1px solid #000;
+.emailInput input, .nameInput input, .passInput input{
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: none;
+    padding: .7rem;
+    font-size: 1rem;
+    border-radius: 5px;
 }
 
-.formGroup input::placeholder {
-    color: #3C4852;
-    font-size: inherit;
-    opacity: 0.7;
+.emailInput label, .nameInput label, .passInput label{
+    position: absolute;
+    font-size: .9rem;
+    color: #000000;
+    left: 10px;
+    font-weight: 500;
+    top: -10px;
+    background: #ffffff;
+    padding: 0 3px;
 }
 
-.formGroup::after {
-    content: '';
-    width: 50%;
-    height: 1px;
-    background-color: #bfbfbf;
-    margin: 0 auto;
-    margin-top: .75rem;
+.secondarySection{
+    width: 65%;
+    margin: .5rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.stayLoggedInCheckbox input{
+    vertical-align: middle;
+    margin-right: .5rem;
+}
+
+.forgotPassword a{
+    font-weight: 700;
+    color: #000000;
+}
+
 
 .authBtn {
-    margin-top: 1rem;
-    background-color: #46b98f;
-    color: white;
-    width: 40%;
+    margin: 1rem 0;
+    background-color: #E1B313;
+    color: #000000;
+    width: 45%;
     border: none;
-    padding: .5rem;
-    border-radius: 5px;
+    padding: .75rem;
+    border-radius: 2px;
     outline: none;
     cursor: pointer;
     text-align: center;
-    font-size: 1.25rem;
+    text-transform: uppercase;
+    font-size: .9rem;
     transition: background-color .3s ease;
+    font-weight: 700;
+    letter-spacing: .5px;
 }
 
 .authBtn:hover {
-    background-color: #24a55a;
+    background-color: #c09a11;
 }
 
 .authSwitchBtn {
     background-color: inherit;
     border: none;
     font-size: 1rem;
+    font-family: inherit;
     outline: none;
     cursor: pointer;
-    color: var(--primary-color);
     font-weight: 700;
-}
-
-.authContainer p {
-    text-align: center;
-    padding-top: .75rem;
 }

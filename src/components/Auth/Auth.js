@@ -1,85 +1,99 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import CloseIcon from "@material-ui/icons/Close";
+import {ReactComponent as GoogleIcon} from "../../assets/google.svg";
 import styles from "./Auth.module.css";
+
 
 const Auth = (props) => {
   return (
     <div className={styles.authContainer}>
-      <CloseIcon fontSize="large" style={{position: "absolute", top: "0", right: "15px", marginTop: "1rem", marginLeft: "1rem", cursor: "pointer"}} onClick={props.onCancel}/>
-      <h2>{props.authMode ? "Login" : "Signup"}</h2>
+      <CloseIcon
+        fontSize="large"
+        style={{
+          position: "absolute",
+          top: "0",
+          right: "15px",
+          marginTop: "1rem",
+          marginLeft: "1rem",
+          cursor: "pointer",
+        }}
+        onClick={props.onCancel}
+      />
+      <div className={styles.informationHeading}>Register to the website to download more icons</div>
+      <h2>{props.authMode ? "Sign in" : "Sign up"}</h2>
+      <p className={styles.socialNetwork}>with your social network</p>
+      <Link to="/" className={styles.googleLinkContainer}><GoogleIcon/><span>Google</span></Link>
+      <p className={styles.separator}>or</p>
       {props.authMode ? (
         <form className={styles.formGroup} action="/login" method="POST">
+          <div className={styles.emailInput}>
           <input
-            className={styles.emailInput}
-            type="email"
+            type="text"
             name="email"
-            placeholder="Email"
-            autoComplete="false"
+            autoComplete="off"
             required
           />
+          <label>Username or Email</label>
+          </div>
+          <div className={styles.passInput}>
           <input
-            className={styles.passInput}
             type="password"
             name="password"
-            placeholder="Password"
             required
           />
+          <label>Password</label> 
+          </div>
+          <div className={styles.secondarySection}>
+            <div className={styles.stayLoggedInCheckbox}>
+            <input type="checkbox" name="stayIn"/>
+            <label>Keep me signed in</label>
+            </div>
+            <div className={styles.forgotPassword}>
+              <Link to="/">Forgot Password?</Link>
+            </div>
+          </div>
           <button className={styles.authBtn} type="submit">
-            Login
+            Sign in
           </button>
         </form>
       ) : (
         <form className={styles.formGroup} action="/signup" method="POST">
+          <div className={styles.nameInput}>
           <input
-            className={styles.nameInput}
             type="text"
-            name="f-name"
-            placeholder="First Name"
-            autoComplete="false"
+            name="username"
+            autoComplete="off"
             required
           />
+          <label>Username</label>
+          </div>
+          <div className={styles.emailInput}>
           <input
-            className={styles.nameInput}
-            type="text"
-            name="l-name"
-            placeholder="Last Name"
-            autoComplete="false"
-            required
-          />
-          <input
-            className={styles.emailInput}
             type="email"
             name="email"
-            placeholder="Email"
-            autoComplete="false"
+            autoComplete="off"
             required
           />
+          <label>Email</label>
+          </div>
+          <div className={styles.passInput}>
           <input
-            className={styles.passInput}
             type="password"
             name="password"
-            placeholder="Create Password"
             required
           />
-          <input
-            className={styles.passInput}
-            type="password"
-            name="password"
-            placeholder="Confirm Password"
-            required
-          />
+          <label>Password</label> 
+          </div>
           <button className={styles.authBtn} type="submit">
-            Signup
+            Sign up
           </button>
         </form>
       )}
-      <p>
-        or{" "}
         <button onClick={props.authSwitch} className={styles.authSwitchBtn}>
-          {props.authMode ? "Create an account" : "Log into your account"}
+          {props.authMode ? "Not a member? Sign up" : "Already Registered? Sign in"}
         </button>
-      </p>
     </div>
   );
 };
