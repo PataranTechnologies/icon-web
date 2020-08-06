@@ -1,0 +1,95 @@
+.authContainer {
+    padding: 2rem 1rem;
+    width: 100%;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.75);
+    border-radius: 15px;
+    position: relative;
+}
+
+.authContainer h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #302f2f;
+    padding: 1rem 0 1.5rem 0;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.emailInput,
+.passInput,
+.nameInput {
+    width: 70%;
+    padding: .7rem;
+    border: 1px solid #dadada;
+    margin: .5rem auto;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border .3s ease;
+}
+
+.emailInput:hover,
+.passInput:hover,
+.nameInput:hover {
+    border: 1px solid #bfbfbf;
+}
+
+.emailInput:focus,
+.passInput:focus,
+.nameInput:focus {
+    border: 1px solid #000;
+}
+
+.formGroup input::placeholder {
+    color: #3C4852;
+    font-size: inherit;
+    opacity: 0.7;
+}
+
+.formGroup::after {
+    content: '';
+    width: 50%;
+    height: 1px;
+    background-color: #bfbfbf;
+    margin: 0 auto;
+    margin-top: .75rem;
+}
+
+.authBtn {
+    margin-top: 1rem;
+    background-color: #46b98f;
+    color: white;
+    width: 40%;
+    border: none;
+    padding: .5rem;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.25rem;
+    transition: background-color .3s ease;
+}
+
+.authBtn:hover {
+    background-color: #24a55a;
+}
+
+.authSwitchBtn {
+    background-color: inherit;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.authContainer p {
+    text-align: center;
+    padding-top: .75rem;
+}
