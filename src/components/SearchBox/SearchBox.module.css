@@ -1,0 +1,39 @@
+.searchBoxContainer{
+    position: absolute;
+    left: 1%;
+    bottom: 5%;
+    width: 50%;
+    height: 3.5rem;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2rem;
+    cursor: pointer;
+    box-shadow: 0 3px 3px 3px #cccccc;
+}
+
+.searchBoxInput{
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    pointer-events: none;
+}
+
+.searchBoxInput::placeholder{
+    font-size: 1.025rem;
+    padding: 0 1rem;
+    font-family: inherit;
+    letter-spacing: .75px;
+    color: #acacac;
+}
+
+.searchIcon{
+    height: 45%;
+    padding-left: 1.1rem;
+    vertical-align: middle;
+}
