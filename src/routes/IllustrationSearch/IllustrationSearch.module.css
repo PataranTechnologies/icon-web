@@ -1,9 +1,14 @@
-.itemsWrapper{
+.searchWrapper{
+    width: 100%;
+    margin-top: 9rem;
+}
+
+.illustrationsWrapper{
     width: 90%;
     margin: 0 auto;
 }
 
-.allItemsContainer{
+.allIllustrationsContainer{
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -11,7 +16,9 @@
     flex-wrap: wrap;
 }
 
-.itemContainer{
+.illustrationContainer{
+    width: 15rem;
+    height: 15rem;
     margin: .75rem;
     border: 1px solid #707070;
     border-radius: 5px;
@@ -20,25 +27,27 @@
     box-shadow: 0 2px 3px 3px #eeeeee;
 }
 
-.itemContainer:hover{
+.illustrationContainer:hover{
     transform: scale(1);
 }
 
-.item{
+.illustration{
     width: 100%;
+    height: calc(4/5 * 15rem);
     display: grid;
     place-items: center;
 }
 
-.item img{
-    width: 60%;
-    height: 60%;
+.illustration img{
+    width: 75%;
+    height: 75%;
     vertical-align: middle;
     object-fit: contain;
 }
 
 .addToCollectionBtn{
     width: 100%;
+    height: calc(1/5 * 15rem);
 }
 
 .addToCollectionBtn button{

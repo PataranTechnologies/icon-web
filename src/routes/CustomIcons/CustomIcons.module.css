@@ -1,0 +1,81 @@
+.customIconsWrapper{
+    width: 90%;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dragDropArea{
+    width: 55%;
+    min-height: 70vh;
+    background-color: #e5e5e5;
+}
+
+.addImageInfoContainer{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.heading{
+    font-size: 1.2rem;
+    font-weight: 700;
+    width: 70%;
+    margin: 1rem auto .5rem auto;
+}
+
+.subHeading{
+    color: #7e7e7e;
+    font-weight: 500;
+}
+
+.sectionTwo{
+    width: 100%;
+}
+
+.sectionTwo img{
+    width: 50%; 
+    margin: 0 auto .5rem auto; 
+    cursor: pointer
+}
+
+.dragHeading p{
+    margin-bottom: .25rem;
+}
+
+.dragHeading p:first-of-type{
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.dragHeading p:last-of-type{
+    color: #696969;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.dragHeading p:last-of-type button{
+    background: none;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    color: #e1b313;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.uploadInfo{
+    color: #919191;
+    margin-bottom: 2rem;
+}
+
+.uploadSubmitBtn{
+    border: none;
+    outline: none;
+    background: #d5d5d5;
+    padding: 1rem 7rem;
+    color: #888888;
+    font-family: inherit;
+    font-size: 1.1rem;
+}
