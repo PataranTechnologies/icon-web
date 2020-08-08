@@ -1,10 +1,17 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
+import SearchBox from "../../../../components/SearchBox/SearchBox";
 import iconsGroup from "../../../../assets/icongroup.png";
-import searchIcon from "../../../../assets/search.svg";
 import styles from "./Header.module.css";
 
 const Header = () => {
+  const history = useHistory();
+
+  const iconSearchHandler = () => {
+    history.push("/icon-search");
+  }
+  
   return (
     <div className={styles.headerWrapper}>
       <div className={styles.header}>
@@ -23,15 +30,7 @@ const Header = () => {
             className={styles.heroImage}
           />
         </div>
-        <div className={styles.searchBoxContainer}>
-          <img src={searchIcon} alt="Search" className={styles.searchIcon}/>
-          <input
-            type="search"
-            placeholder="Search by Icons Name"
-            name="icon-search"
-            className={styles.searchBoxInput}
-          />
-        </div>
+        <SearchBox placeholder="Search by Icons Name" name="iconSearch" searchIcons={iconSearchHandler}/>
       </div>
     </div>
   );

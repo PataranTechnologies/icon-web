@@ -1,0 +1,80 @@
+.searchWrapper{
+    width: 100%;
+    margin-top: 9rem;
+}
+
+.illustrationsWrapper{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.allIllustrationsContainer{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.illustrationContainer{
+    width: 15rem;
+    height: 15rem;
+    margin: .75rem;
+    border: 1px solid #707070;
+    border-radius: 5px;
+    transform: scale(0.9);
+    transition: transform .2s ease;
+    box-shadow: 0 2px 3px 3px #eeeeee;
+}
+
+.illustrationContainer:hover{
+    transform: scale(1);
+}
+
+.illustration{
+    width: 100%;
+    height: calc(4/5 * 15rem);
+    display: grid;
+    place-items: center;
+}
+
+.illustration img{
+    width: 75%;
+    height: 75%;
+    vertical-align: middle;
+    object-fit: contain;
+}
+
+.addToCollectionBtn{
+    width: 100%;
+    height: calc(1/5 * 15rem);
+}
+
+.addToCollectionBtn button{
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-family: inherit;
+    font-size: .9rem;
+}
+
+.nextPageBtn{
+    display: block;
+    padding: .5rem 1rem;
+    width: 10rem;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #e1b313;
+    letter-spacing: .75px;
+    color: black;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1.1rem;
+    margin: 2rem auto;
+    font-weight: 700;
+}
