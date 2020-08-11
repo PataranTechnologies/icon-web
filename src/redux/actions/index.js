@@ -12,6 +12,12 @@ export const removeFromCart = (id) => {
     }
 }
 
+export const emptyCart = () => {
+    return {
+        type: "EMPTY_CART",
+    }
+}
+
 export const cartToggle = () => {
     return {
         type: "TOGGLE_DISPLAY",

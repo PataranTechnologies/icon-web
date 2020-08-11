@@ -7,6 +7,9 @@ const cartReducer = ( state = [], action ) => {
             const updatedState = state.filter(item => item.id !== action.payload);
             return updatedState;
         }
+        case "EMPTY_CART": {
+            return state = [];
+        }
         default: {
             return state;
         }
