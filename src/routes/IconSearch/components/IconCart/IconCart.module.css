@@ -1,0 +1,63 @@
+.iconCartWrapper{
+    width: 35%;
+    position: fixed;
+    top: 5rem;
+    right: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 3px 2px #00000029;
+    z-index: 30;
+    transition: all .4s ease;
+    transform: translateY(-100vh);
+}
+
+.iconCartWrapper.show{
+    transform: translateY(0);
+}
+
+.heading{
+    background-color: #b2b2b2;
+    padding: .5rem;
+    text-align: center;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+
+.cartWrapper{
+    width: 100%;
+    padding: 1.25rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.icon{
+    width: 4.5rem;
+    height: 4.5rem;
+    display: grid;
+    place-items: center;
+    background-color: #e3e3e3;
+    position: relative;
+}
+
+.icon img{
+    width: 75%;
+    height: 75%;
+    object-fit: contain;
+}
+
+.downloadBtn{
+    width: 75%;
+    margin: 5rem auto 1rem auto;
+    font-family: inherit;
+    font-size: 1.05rem;
+    letter-spacing: .75px;
+    text-transform: uppercase;
+    padding: .5rem;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: 500;
+    border: 1.5px solid #e1b313;
+}

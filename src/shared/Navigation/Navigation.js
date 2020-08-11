@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+
+import { cartToggle } from "../../redux/actions/index";
 
 import Overlay from "../../components/Overlay/Overlay";
 import Backdrop from "../../components/Backdrop/Backdrop";
@@ -9,7 +12,10 @@ import user from "../../assets/user.svg";
 import collectedIcons from "../../assets/collected.svg";
 import styles from "./Navigation.module.css";
 
+
 const Navigation = () => {
+  const cart = useSelector(state => state.cart);
+  const dispatch = useDispatch();
   const [overlay, setOverlay] = useState(false);
   const [authMode, setAuthMode] = useState({ login: false, signup: false });
 
@@ -26,6 +32,11 @@ const Navigation = () => {
   const switchAuthHandler = () => {
     setAuthMode({ login: !authMode.login, signup: !authMode.signup });
   };
+
+  const cartToggleHandler = () => {
+    dispatch(cartToggle());
+  }
+
   return (
     <>
       <Overlay show={overlay}>
@@ -75,8 +86,8 @@ const Navigation = () => {
               <img src={user} alt="User" className={styles.logInUserImage} />{" "}
               Login
             </button>
-            <div className={styles.iconContainerCart}>
-              <div className={styles.iconCount}>40</div>
+            <div className={styles.iconContainerCart} onClick={cartToggleHandler}>
+              <div className={styles.iconCount}>{cart.length}</div>
               <img
                 src={collectedIcons}
                 alt="Icons Collected"

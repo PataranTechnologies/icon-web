@@ -87,6 +87,7 @@
 .iconContainerCart{
     height: max-content;
     position: relative;
+    cursor: pointer;
 }
 
 .iconCount{

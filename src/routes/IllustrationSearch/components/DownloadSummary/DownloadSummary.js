@@ -1,20 +1,6 @@
 import React from "react";
 import CloseIcon from "@material-ui/icons/Close";
 
-
-import illus1 from "../../../../assets/illustrations/airspace.svg";
-import illus2 from "../../../../assets/illustrations/blog.svg";
-import illus3 from "../../../../assets/illustrations/cab.svg";
-import illus4 from "../../../../assets/illustrations/call.svg";
-import illus5 from "../../../../assets/illustrations/card.svg";
-import illus6 from "../../../../assets/illustrations/docs.svg";
-import illus7 from "../../../../assets/illustrations/documents.svg";
-import illus8 from "../../../../assets/illustrations/graduate.svg";
-import illus9 from "../../../../assets/illustrations/house.svg";
-import illus10 from "../../../../assets/illustrations/interview.svg";
-import illus11 from "../../../../assets/illustrations/message.svg";
-import illus12 from "../../../../assets/illustrations/pay.svg";
-
 import styles from "./DownloadSummary.module.css";
 
 const DownloadSummary = ({ content, onCancel }) => {
