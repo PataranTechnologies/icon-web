@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import CloseIcon from "@material-ui/icons/Close";
 
-import styles from "./DownloadSummary.module.css";
+import styles from "./CartSummary.module.css";
 
-const DownloadSummary = ({ content, onCancel, downloaded }) => { 
+const CartSummary = ({ content, onClick, downloaded }) => { 
 
   const [downloadOptions] = useState([{type: "png", selected: false}, {type: "svg", selected: false}, {type: "psd", selected: false}, {type: "eps", selected: false}]);
 
@@ -25,7 +25,7 @@ const DownloadSummary = ({ content, onCancel, downloaded }) => {
           marginLeft: "1rem",
           cursor: "pointer",
         }}
-        onClick={onCancel}
+        onClick={onClick}
       />
       <div className={styles.illustration}>
           <h2>Illustration</h2>
@@ -46,4 +46,4 @@ const DownloadSummary = ({ content, onCancel, downloaded }) => {
   );
 };
 
-export default DownloadSummary;
+export default CartSummary;

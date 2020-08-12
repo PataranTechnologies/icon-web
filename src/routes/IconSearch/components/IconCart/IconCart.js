@@ -5,8 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import CloseIcon from "@material-ui/icons/Close";
 import {
   removeFromCart,
-  cartToggle,
-  emptyCart,
+  cartToggle
 } from "../../../../redux/actions/index";
 
 const IconCart = ({ downloaded }) => {
@@ -17,9 +16,21 @@ const IconCart = ({ downloaded }) => {
   const downloadHandler = () => {
     setTimeout(() => {
       dispatch(cartToggle());
-      dispatch(emptyCart());
       downloaded();
     }, 300);
+  };
+
+  const closeIconStyles = {
+    position: "absolute",
+    bottom: "-.5rem",
+    right: "-.5rem",
+    width: "1rem",
+    height: "1rem",
+    borderRadius: "50%",
+    backgroundColor: "#ffffff",
+    boxShadow: "0px 2px 2px 2px #eeeeee",
+    cursor: "pointer",
+    color: "#707070",
   };
 
   return (
@@ -39,18 +50,7 @@ const IconCart = ({ downloaded }) => {
                 <img src={icon.icon} alt="Icon" />
                 <CloseIcon
                   fontSize="small"
-                  style={{
-                    position: "absolute",
-                    bottom: "-.5rem",
-                    right: "-.5rem",
-                    width: "1rem",
-                    height: "1rem",
-                    borderRadius: "50%",
-                    backgroundColor: "#ffffff",
-                    boxShadow: "0px 2px 2px 2px #eeeeee",
-                    cursor: "pointer",
-                    color: "#707070",
-                  }}
+                  style={closeIconStyles}
                   onClick={() => dispatch(removeFromCart(icon.id))}
                 />
               </div>

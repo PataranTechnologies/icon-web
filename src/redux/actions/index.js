@@ -30,3 +30,10 @@ export const addIllustrationToDownload = (illustration) => {
         payload: illustration
     }
 }
+
+export const iconPreview = (icon) => {
+    return {
+        type: "PREVIEW",
+        payload: icon
+    }
+}
