@@ -11,12 +11,14 @@ import DownloadThanks from "../../components/DownloadThanks/DownloadThanks";
 import Backdrop from "../../components/Backdrop/Backdrop";
 import Overlay from "../../components/Overlay/Overlay";
 import IconPreview from "./components/IconPreview/IconPreview";
+import IconInfo from "./components/IconInfo/IconInfo";
 
 
 import styles from "./IconSearch.module.css";
 
 const IconSearch = () => {
   const [downloadModal, setDownloadModal] = useState(false);
+  const [editMode, setEditMode] = useState(false);
   const [summaryModal, setSummaryModal] = useState(false);
   const [overlayShown, setOverlayShown] = useState(false);
   const dispatch = useDispatch();
@@ -36,6 +38,8 @@ const IconSearch = () => {
 
   const downloadHandler = () => {
     setDownloadModal(true);
+    setOverlayShown(false);
+    setEditMode(false);
   }
 
   const iconPreviewer = (id) => {
@@ -44,19 +48,28 @@ const IconSearch = () => {
     dispatch(iconPreview(icon));
   }
 
+  const editHandler = () => {
+    setEditMode(true);
+    setOverlayShown(false);
+  }
+
   return (
     <div className={styles.searchWrapper}>
       <IconCart downloaded = {summaryHandler}/>
       <Overlay show={overlayShown}>
-          <IconPreview content={iconsPreview} added={addIconToCart} onCancel={() => setOverlayShown(false)}/>
+          <IconInfo content={iconsPreview} onCancel={() => setOverlayShown(false)} downloaded ={downloadHandler} editClicked={editHandler}/>
       </Overlay>
       {overlayShown && <Backdrop onClick={() => setOverlayShown(false)} />}
+      <Overlay show={editMode}>
+        <IconPreview content={iconsPreview} added={addIconToCart} onCancel={() => setEditMode(false)} downloaded = {downloadHandler}/>
+      </Overlay>
+      {editMode && <Backdrop onClick={() => setEditMode(false)} />}
       <SearchBar placeholder="Search Icons" searchName="searchIcons"/>
       <Overlay show={summaryModal}>
         <CartSummary onClick={() => setSummaryModal(false)} content={cart} downloaded={downloadHandler}/>
       </Overlay>
       {summaryModal && <Backdrop onClick={() => setSummaryModal(false)} />}
-      {downloadModal && <DownloadThanks onCancel={() => setDownloadModal(false)}/>}
+      {downloadModal && <DownloadThanks onClick={() => setDownloadModal(false)}/>}
       {downloadModal && <Backdrop onClick={() => setDownloadModal(false)}/>}
       <div className={styles.iconsWrapper}>
         <div className={styles.allIconsContainer}>

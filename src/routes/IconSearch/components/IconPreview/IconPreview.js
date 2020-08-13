@@ -8,7 +8,7 @@ import { addToCart } from "../../../../redux/actions";
 
 import styles from "./IconPreview.module.css";
 
-const IconPreview = ({ content, onCancel }) => {
+const IconPreview = ({ content, onCancel, downloaded }) => {
     const [currentColor, setCurrentColor] = useState("");
     const [size, setSize] = useState("");
     const [show, setShow] = useState({size: false, color: true});
@@ -90,7 +90,7 @@ const IconPreview = ({ content, onCancel }) => {
             </div>
 
         </div>
-        <button className={styles.downloadButton}>Download</button>
+        <button className={styles.downloadButton} onClick={downloaded}>Download</button>
       </div>
     </div>
   );
