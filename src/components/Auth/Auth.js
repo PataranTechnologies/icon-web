@@ -14,7 +14,7 @@ const Auth = (props) => {
         style={{
           position: "absolute",
           top: "0",
-          right: "15px",
+          right: "1rem",
           marginTop: "1rem",
           marginLeft: "1rem",
           cursor: "pointer",

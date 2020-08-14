@@ -22,7 +22,7 @@
     margin: .75rem;
     border: 1px solid #707070;
     border-radius: 5px;
-    transform: scale(0.9);
+    transform: scale(0.95);
     transition: transform .2s ease;
     box-shadow: 0 2px 3px 3px #eeeeee;
 }

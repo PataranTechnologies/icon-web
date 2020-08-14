@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import AddIcon from "@material-ui/icons/Add";
 import SearchBar from "../../components/SearchBar/SearchBar";
+import Overlay from "../../components/Overlay/Overlay";
+import Backdrop from "../../components/Backdrop/Backdrop";
+import DownloadSummary from "./components/DownloadSummary/DownloadSummary";
 
 import illus1 from "../../assets/illustrations/airspace.svg";
 import illus2 from "../../assets/illustrations/blog.svg";
@@ -19,6 +22,8 @@ import illus12 from "../../assets/illustrations/pay.svg";
 import styles from "./IllustrationSearch.module.css";
 
 const IllustrationSearch = () => {
+    const [illustrationToDownload, setIllustrationToDownload] = useState([]);
+    const [overlayShown, setOverlayShown] = useState(false);
     const [illustrations] = useState([
       {illus: illus3, id: "1"},
       {illus: illus2, id: "2"},
@@ -72,10 +77,16 @@ const IllustrationSearch = () => {
 
     const addIllustrationToCart = (id) => {
       const illustration = illustrations.find(illustration => id === illustration.id);
+      setIllustrationToDownload(illustration);
+      setOverlayShown(true);
     }
 
     return (
       <div className={styles.searchWrapper}>
+        <Overlay show={overlayShown}>
+          <DownloadSummary content={illustrationToDownload} onCancel={() => setOverlayShown(false)}/>
+        </Overlay>
+        {overlayShown && <Backdrop onClick={() => setOverlayShown(false)} />}
         <SearchBar placeholder="Search Illustrations" searchName="searchIllustrations"/>
         <div className={styles.illustrationsWrapper}>
         <div className={styles.allIllustrationsContainer}>
@@ -87,7 +98,7 @@ const IllustrationSearch = () => {
                 </div>
                 <div className={styles.addToCollectionBtn}>
                   <button onClick={addIllustrationToCart.bind(null, illustration.id)}>
-                    <AddIcon style={{ verticalAlign: "middle" }} /> Collection
+                    <AddIcon style={{ verticalAlign: "middle" }} /> Download
                   </button>
                 </div>
               </div>
