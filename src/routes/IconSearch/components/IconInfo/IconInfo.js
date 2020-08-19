@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import CloseIcon from "@material-ui/icons/Close";
+import EditIcon from "@material-ui/icons/Edit";
 
-import styles from "./DownloadSummary.module.css";
+import styles from "./IconInfo.module.css";
 
-const DownloadSummary = ({ content, onCancel, downloaded }) => { 
+const IconInfo = ({ content, onCancel, downloaded, editClicked }) => { 
 
   const [downloadOptions] = useState([{type: "png", selected: false}, {type: "svg", selected: false}, {type: "psd", selected: false}, {type: "eps", selected: false}]);
 
@@ -27,9 +28,9 @@ const DownloadSummary = ({ content, onCancel, downloaded }) => {
         }}
         onClick={onCancel}
       />
-      <div className={styles.illustration}>
-          <h2>Illustration</h2>
-          <img src={content.illus} alt="Download Content" />
+      <div className={styles.icon}>
+          <h2>Icon</h2>
+          <img src={content.icon} alt="Download Content" />
       </div>
       <div className={styles.downloadInfo}>
         <div className={styles.downloadOptions}>
@@ -40,10 +41,11 @@ const DownloadSummary = ({ content, onCancel, downloaded }) => {
           })}
         </div>
         <button className={styles.allBtn}>All Formats</button>
+        <button className={styles.editBtn} onClick={editClicked}><EditIcon fontSize="small" style={{verticalAlign: "middle"}}/> Edit Icon</button> 
         <button className={styles.downloadButton} onClick={downloadHandler}>Download</button>
       </div>
     </div>
   );
 };
 
-export default DownloadSummary;
+export default IconInfo;
